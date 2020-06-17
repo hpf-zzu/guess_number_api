@@ -12,4 +12,10 @@ public class GameService {
         List<String> userAnswer = Arrays.asList(userAnswerString.split(" "));
         return guessNumberGame.guess(userAnswer);
     }
+
+    public int integral(String answer1) {
+        List<String> answerList = Arrays.asList(answer1.split(" "));
+        String result = guessNumberGame.guess(answerList);
+        return guessNumberGame.countScore(result);
+    }
 }

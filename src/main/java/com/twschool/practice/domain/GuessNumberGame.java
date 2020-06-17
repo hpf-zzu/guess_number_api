@@ -10,9 +10,9 @@ public class GuessNumberGame {
     private int MAX_TRY_TIMES = 6;
     private int leftTryTimes = MAX_TRY_TIMES;
 
+    private static int correctTimes = 0;
+    private static int score = 0;
     private RandomAnswerGenerator randomAnswerGenerator;
-
-    private int correctTimes = 0;
 
     public int countScore(String result){
         if (result.equals("4A0B")){
