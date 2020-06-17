@@ -9,7 +9,31 @@ public class GuessNumberGame {
     private GameStatus status = GameStatus.CONTINUED;
     private int MAX_TRY_TIMES = 6;
     private int leftTryTimes = MAX_TRY_TIMES;
+
     private RandomAnswerGenerator randomAnswerGenerator;
+
+    private int correctTimes = 0;
+
+    public int countScore(String result){
+        if (result.equals("4A0B")){
+            if (correctTimes==0){
+                score=score+3;
+                correctTimes++;
+            }else {
+                score=score+3;
+                correctTimes++;
+                if (correctTimes%3==0) score=score+2;
+                if (correctTimes%5==0) score=score+3;
+            }
+        }else {
+            if (score>=3)
+                score=score-3;
+            else score=0;
+            correctTimes=0;
+        }
+        return score;
+    }
+
 
     public GuessNumberGame(RandomAnswerGenerator randomAnswerGenerator) {
         this.randomAnswerGenerator = randomAnswerGenerator;
